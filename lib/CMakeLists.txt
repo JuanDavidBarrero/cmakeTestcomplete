@@ -1,2 +1,2 @@
-add_subdirectory(Persona)
 add_subdirectory(Estudiante)
+add_subdirectory(Persona)

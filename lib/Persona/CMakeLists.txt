@@ -1,8 +1,4 @@
+add_library(MyPersons Persona.cpp Persona.h)
 
-add_library(${PERSON_LIBRARY}
-    persona.cpp
-    persona.h
-)
+target_include_directories(MyPersons PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-
-target_include_directories(${PERSON_LIBRARY} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

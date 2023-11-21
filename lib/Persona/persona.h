@@ -1,12 +1,26 @@
-#pragma once
+#ifndef PERSONA_H
+#define PERSONA_H
+
 #include <string>
 
 class Persona {
-public:
-    Persona(const std::string& nombre, int edad);
-    std::string ObtenerNombre() const;
-    int ObtenerEdad() const;
 private:
-    std::string nombre_;
-    int edad_;
+    std::string nombre;
+    int edad;
+
+public:
+    // Constructor
+    Persona();
+
+    // Métodos de acceso
+    std::string getNombre() const;
+    void setNombre(const std::string &nuevoNombre);
+
+    int getEdad() const;
+    void setEdad(int nuevaEdad);
+
+    // Otro método
+    void saludar() const;
 };
+
+#endif // PERSONA_H

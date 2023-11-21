@@ -1,11 +1,33 @@
-#include "persona.h"
+#include "Persona.h"
+#include <iostream>
 
-Persona::Persona(const std::string& nombre, int edad) : nombre_(nombre), edad_(edad) {}
+// Constructor por defecto
+Persona::Persona() : edad(0) {}
 
-std::string Persona::ObtenerNombre() const {
-    return nombre_;
+// Métodos de acceso
+std::string Persona::getNombre() const {
+    return nombre;
 }
 
-int Persona::ObtenerEdad() const {
-    return edad_;
+void Persona::setNombre(const std::string &nuevoNombre) {
+    nombre = nuevoNombre;   
+}
+
+int Persona::getEdad() const {
+    return edad;
+}
+
+void Persona::setEdad(int nuevaEdad) {
+    // Validar que la edad sea no negativa
+    if (nuevaEdad >= 0) {
+        edad = nuevaEdad;
+    } else {
+        std::cout << "La edad no puede ser negativa. Se establecerá en 0." << std::endl;
+        edad = 0;
+    }
+}
+
+// Otro método
+void Persona::saludar() const {
+    std::cout << "Hola, soy " << nombre << " y tengo " << edad << " años." << std::endl;
 }

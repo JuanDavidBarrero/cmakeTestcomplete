@@ -1,8 +1,9 @@
-add_library(${STUDENT_LIBRARY}
-    estudiante.cpp
-    estudiante.h
-)
+add_library(MyEstudiante Estudiante.cpp Estudiante.h)
 
-target_include_directories(${STUDENT_LIBRARY} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+# Incluir la carpeta actual para buscar los encabezados
+target_include_directories(MyEstudiante PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../../pandalib)
 
-target_link_libraries(${STUDENT_LIBRARY} ${PERSON_LIBRARY})
+target_include_directories(MyEstudiante PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+target_link_libraries(MyEstudiante MyPersons)
+
